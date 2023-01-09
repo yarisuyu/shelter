@@ -1,47 +1,5 @@
-body {
-    max-width: 1280px;
-    color: #545454;
-}
-
-div, h1, h2, h3, h4, p {
-    font-style: normal;
-    font-weight: 400;
-}
-
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-button {
-    padding: 15px 44px;
-    background: #F1CDB3;
-    border: 0;
-    border-radius: 100px;
-}
-
-button a {
-    font-family: 'Georgia', 'Roboto Serif', serif;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #292929;
-}
-
-a {
-    text-decoration: none;
-}
-
-h3 {
-    font-family: 'Georgia', 'Roboto Serif', serif;
-    font-size: 35px;
-    line-height: 130%;
-    text-align: center;
-    letter-spacing: 0.06em;
-}
-
-
 /* Header starts */
+
 .header {
     margin-bottom: -132px;
     background: transparent;
@@ -114,12 +72,10 @@ h3 {
 .nav__link:hover, .nav__link:active, .nav__link:visited {
     line-height: 200%;
 }
+
 /* Header ends */
 
 /* Start screen starts */
-/*url(noise_lines_transparent@2X.png),*/
-/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-/* 00% 215.42% at 0% 0%,  */
 .start-screen {
     padding-top: 320px;
     padding-bottom: 243px;
@@ -421,60 +377,3 @@ h3 {
 }
 
 /* Donation ends  */
-
-/* Footer starts  */
-
-.footer {
-    padding-top: 22px;
-    padding-bottom: 20px;
-    background: url(../../assets/images/footer-puppy.png),
-        url(../../assets/images/start-screen-gradient-background.png),
-        radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) ,
-        #211F20;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: calc(50% + 450px) 40px, center, center, center;
-
-    color: #F1CDB3;
-
-    font-family: 'Georgia', 'Roboto Serif', serif;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-}
-
-.footer__content {
-    display: grid;
-    grid-template-columns: 280px 302px;
-    grid-column-gap: 158px;
-}
-
-.footer__header {
-    color: #FFFFFF;
-    text-align: left;
-}
-
-.footer__content div:first-of-type .footer__header {
-    margin-bottom: 38px;
-}
-
-.footer__content div:last-of-type .footer__header {
-    margin-bottom: 32px;
-}
-
-.footer__line {
-    display: grid;
-    grid-gap: 20px;
-    align-items: center;
-}
-
-.footer__content div:first-of-type .footer__line {
-    grid-template-columns: 40px 1fr;
-    margin-bottom: 40px;
-}
-
-.footer__content div:last-of-type .footer__line {
-    grid-template-columns: 22px 1fr;
-    margin-bottom: 32px;
-}
-
-/* Footer ends  */

@@ -1,0 +1,161 @@
+/* Header starts */
+
+.header__content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.header__logo-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-size: 32px;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.header__logo-subtitle {
+    padding-left: 4px;
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #545454;
+}
+
+.header__nav {
+    margin-right: 2px;
+    margin-bottom: 4px;
+}
+
+
+.header__nav-items {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__link {
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+    text-decoration: none;
+    color: #545454;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.nav__link_active {
+    color: #545454;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #F1CDB3;
+}
+
+.nav__link:hover, .nav__link:active, .nav__link:visited {
+    line-height: 200%;
+}
+
+/* Header ends */
+
+/* Own pets starts */
+.our-pets {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background: #F6F6F6;
+}
+
+.pets__header {
+    margin: 0;
+    margin-bottom: 45px;
+}
+
+.pets__pet-list {
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    grid-column-gap: 30px;
+    margin-bottom: 45px;
+}
+
+.pet-card {
+    box-sizing: border-box;
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    margin: 0;
+}
+
+.pet-card-img {
+    border-radius: 9px 9px 0px 0px;
+    margin-bottom: 29px;
+}
+
+.pet-card-desc {
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+
+    margin-bottom: 30px;
+}
+
+.pet-card-btn {
+    width: 187px;
+    height: 52px;
+    padding: 14px 30px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    margin: 30px 0;
+    background: inherit;
+}
+
+.pet-card-btn-link {
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+
+.pets__pagination {
+    margin: 0 auto;
+}
+
+.button-paginator {
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background: transparent;
+    padding: 14px 15px;
+}
+
+.button-paginator-inactive {
+    font-family: 'Georgia', 'Roboto Serif', serif;;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    color: #CDCDCD;
+    border: 2px solid #CDCDCD;
+}
+
+.button-paginator-current {
+    background: #F1CDB3;
+    border: 0;
+    text-align: center;
+    color: #292929;
+}
+
+/* Own pets ends */
