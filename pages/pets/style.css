@@ -79,14 +79,15 @@
 
 .pets__header {
     margin: 0;
-    margin-bottom: 45px;
+    margin-bottom: 58px;
 }
 
 .pets__pet-list {
     display: grid;
     grid-template-columns: repeat(4, 270px);
-    grid-column-gap: 30px;
-    margin-bottom: 45px;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    margin-bottom: 60px;
 }
 
 .pet-card {
@@ -100,7 +101,7 @@
 
 .pet-card-img {
     border-radius: 9px 9px 0px 0px;
-    margin-bottom: 29px;
+    margin-bottom: 25px;
 }
 
 .pet-card-desc {
@@ -116,7 +117,7 @@
 .pet-card-btn {
     width: 187px;
     height: 52px;
-    padding: 14px 30px;
+    padding: 13px 30px;
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     margin: 30px 0;
@@ -132,14 +133,18 @@
 }
 
 .pets__pagination {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 22px;
 }
 
 .button-paginator {
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     background: transparent;
-    padding: 14px 15px;
+    box-sizing: content-box;
+    padding: 12px;
+    width: 22px;
 }
 
 .button-paginator-inactive {
@@ -153,9 +158,69 @@
 
 .button-paginator-current {
     background: #F1CDB3;
-    border: 0;
     text-align: center;
     color: #292929;
 }
 
 /* Own pets ends */
+
+/* Footer starts  */
+
+.footer {
+    padding-top: 22px;
+    padding-bottom: 24px;
+    background: url(../../assets/images/footer-puppy.png),
+        url(../../assets/images/start-screen-gradient-background.png),
+        radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) ,
+        #211F20;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: calc(50% + 450px) 40px, center, center, center;
+
+    color: #F1CDB3;
+
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: 280px 302px;
+    grid-column-gap: 158px;
+}
+
+.footer__header {
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.footer__content div:first-of-type .footer__header {
+    margin-bottom: 34px;
+}
+
+.footer__content div:last-of-type .footer__header {
+    margin-bottom: 30px;
+}
+
+.footer__line {
+    display: grid;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.footer__content div:first-of-type .footer__line {
+    grid-template-columns: 40px 1fr;
+    margin-bottom: 32px;
+}
+
+.footer__content div:last-of-type .footer__line {
+    grid-template-columns: 22px 1fr;
+    margin-bottom: 30px;
+}
+
+.footer__ico {
+    padding-top: 3px;
+}
+
+/* Footer ends  */
