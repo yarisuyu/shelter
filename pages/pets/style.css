@@ -156,6 +156,10 @@
     border: 2px solid #CDCDCD;
 }
 
+.button-paginator-inactive a {
+    color: #CDCDCD;
+}
+
 .button-paginator-current {
     background: #F1CDB3;
     text-align: center;

@@ -15,10 +15,15 @@ div, h1, h2, h3, h4, p {
 }
 
 button {
-    padding: 15px 44px;
+    padding: 16px 44px;
     background: #F1CDB3;
     border: 0;
     border-radius: 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FDDCC4;
 }
 
 button a {
@@ -31,6 +36,8 @@ button a {
 
 a {
     text-decoration: none;
+	font: inherit;
+    color: inherit;
 }
 
 h3 {
