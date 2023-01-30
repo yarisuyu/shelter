@@ -14,7 +14,7 @@ div, h1, h2, h3, h4, p {
     margin: 0 auto;
 }
 
-button {
+button, .button {
     padding: 16px 44px;
     background: #F1CDB3;
     border: 0;
@@ -22,23 +22,21 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:not([disabled]):hover {
     background-color: #FDDCC4;
 }
 
-button a {
+a {
     font-family: 'Georgia', 'Roboto Serif', serif;
     font-size: 17px;
     line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #292929;
-}
+    color: inherit;
 
-a {
+    display: inline-block;
     text-decoration: none;
 	font: inherit;
-    color: inherit;
 }
+
 
 h3 {
     font-family: 'Georgia', 'Roboto Serif', serif;
