@@ -1,5 +1,4 @@
 .header {
-    /* margin-bottom: -132px; */
     margin-bottom: -12rem;
     background: transparent;
 }
@@ -35,7 +34,6 @@
     display: flex;
     flex-direction: column;
     max-width: 31rem; /* 460px;*/
-    /*padding-top: 8rem; */ /* 129px */
     align-items: flex-start;
 
     padding-bottom: 7rem; /* Padding for better centering */
@@ -49,7 +47,6 @@
 }
 
 .start-screen__subheader {
-    /* margin-bottom: 42px; */
     margin-bottom: 2.9em;
     color: var(--color-dark-s);
 }
@@ -67,11 +64,6 @@
 ========================================== */
 
 .about__content {
-    /*padding: 65px 0px 89px;*/
-
-    /* display: grid;
-    grid-template-columns: 475px 544px;
-    grid-column-gap: 120px; */
     padding: 4.4rem 0px 5.9rem;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -85,21 +77,15 @@
 }
 
 .about__desc {
-    /* max-width: 430px; */
     max-width: 28.5rem;
-    /* font-family: 'Arial', 'Open Sans', sans-serif; */
-    /* font-size: 15px;
-    line-height: 160%;*/
 }
 
 .about__header {
     max-width: 10em;
-    /* margin-bottom: 24px; */
     margin: 0.83em 0 0.65em;
 }
 
 .about__desc p {
-    /* margin-bottom: 25px; */
     margin-bottom: 1.7em;
     color: var(--color-dark-xl);
 }
@@ -113,17 +99,12 @@
 ========================================== */
 
 .pets {
-    /* padding-top: 80px;
-    padding-bottom: 100px; */
     padding-top: 5.4rem;
     padding-bottom: 6.5rem;
     background: #F6F6F6;
 }
 
 .pets__header {
-    /* max-width: 400px;
-    margin: 0 auto;
-    margin-bottom: 58px; */
     text-align: center;
     margin: 0 auto;
     max-width: 12em;
@@ -135,8 +116,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 60px;
-    column-gap: 53px; */
     margin-bottom: 4rem;
     column-gap: 3.5rem;
 }
@@ -148,7 +127,6 @@
 .pets__pet-list {
     display: flex;
     flex-wrap: nowrap;
-    /* column-gap: 90px; */
     column-gap: 6rem;
 }
 
@@ -158,7 +136,6 @@
 
 .pets__link {
     display: block;
-    /* width: 175px; */
     width: 11.5rem;
     margin: 0 auto;
 }
@@ -173,18 +150,12 @@
 ========================================== */
 
 .help {
-    /* padding-top: 80px;
-    padding-bottom: 100px; */
     padding-top: 5.3rem;
-    /* padding-bottom: 7em; */
     padding-bottom: 6.6rem;
 }
 
 
 .help__header {
-    /* max-width: 312px;
-    margin: 0 auto;
-    margin-bottom: 58px; */
     text-align: center;
     max-width: 10em;
     margin: 0 auto;
@@ -198,20 +169,13 @@
     justify-content: center;
     margin: 0 auto;
 
-    /* column-gap: 120px;
-    row-gap: 56px;
-
-    padding-right: 22px; */
-    /* column-gap: 8.1rem; */
     column-gap: 7.9rem;
     row-gap: 3.6rem;
-    /* padding-right: 1.5em; */
 }
 
 .help__need-item {
     text-align: center;
     margin: 0;
-    /* width: 110px; */
     white-space: nowrap;
 
     display: flex;
@@ -224,7 +188,6 @@
 }
 
 .help__need-item img {
-    /* margin-bottom: 30px; */
     margin-bottom: 2.1rem;
 }
 
@@ -242,8 +205,6 @@
 
 .donation {
     background: #F6F6F6;
-    /* padding-top: 80px;
-    padding-bottom: 100px; */
     padding-top: 4.8rem;
     padding-bottom: 5.8rem;
 }
@@ -254,52 +215,33 @@
     justify-content: center;
     align-items: center;
     row-gap: 3.2rem;
-    /* column-gap: 50px;
-    max-width: 912px; */
     column-gap: 1.8rem;
-    /* max-width: 57rem; */
     margin: 0 auto;
-    /* padding-right: 1rem; */
 }
 
-/* .donation__pic-img {
-    width: 31.5em;
-    height: 16.3em;
-} */
 
 .donation__content {
     max-width: 24rem;
-    /* margin-top: 1rem; */
     padding-top: 0.6rem;
     padding-right: 1rem;
 }
 
 .donation__header {
     text-align: left;
-    /* max-width: 300px; */
     max-width: 9em;
     margin: 0;
     margin-bottom: -0.35rem;
 }
 
 .donation__subheader {
-    /* font-size: 15px;
-    font-weight: 400;
-    line-height: 110%;
-    letter-spacing: 0.06em; */
-    /* margin-bottom: 20px; */
     margin-bottom: -0.55rem;
 }
 
 .donation__credit-card-link h4 {
-    /* padding: 10px 14px 6px; */
-    /* padding: 10px 15px; */
     padding: 0.7rem 1rem;
     background: var(--color-primary);
     border-radius: 9px;
-    /* margin-bottom: 20px; */
     margin-bottom: 1em;
-    /* margin-right: 16px; */
 
     display: flex;
     flex-wrap: nowrap;
@@ -307,25 +249,8 @@
     align-items: center;
     column-gap: 1rem;
     white-space: nowrap;
-    /* color: var(--light-theme-text-color); */
-    /* font-family: 'Georgia', 'Roboto Serif', serif;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em; */
-
-    /* max-width: 322px; */
     max-width: 16em;
 }
-/*
-.donation__description {
-    /* font-style: italic; */
-    /* font-size: 12px; */
-    /* font-size: .8rem; */
-    /* line-height: 150%; *//*
-    display: flex;
-    align-items: center;
-    color: #B2B2B2;
-} */
 
 /* =======================================
     Donation end
@@ -476,12 +401,6 @@
         row-gap: 1.6rem;
         column-gap: 8rem;
         margin-bottom: 0;
-        /* margin-left: 15px;
-        max-width: 270px !important;
-        flex-wrap: wrap !important;
-        justify-content: space-around !important;
-        column-gap: 0px !important;
-        margin-bottom: 41px !important; */
     }
 
     .pets__pet-list {

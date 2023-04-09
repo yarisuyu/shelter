@@ -81,14 +81,6 @@
         grid-template-rows: 9rem 4.3rem 4.3rem 1fr;
         grid-row-gap: 0.5rem;
     }
-
-    /* .wrapper {
-        padding: 0 2rem;
-    }
-
-    .pet-card-img {
-        margin-bottom: 2rem;
-    } */
 }
 
 @media (max-width: 320px) {
