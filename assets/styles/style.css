@@ -22,10 +22,6 @@ body {
     color: var(--color-dark-3xl);
 }
 
-.noscroll {
-    overflow-y: hidden;
-}
-
 .wrapper {
     max-width: 1200px;
     padding: 0 1rem;
@@ -188,6 +184,7 @@ a.dark:hover {
     padding: 15px 45px;
     border: 2px solid var(--color-primary);
     border-radius: 100px;
+    background: inherit;
 }
 
 .button_primary:hover, .button_secondary:hover {
@@ -292,21 +289,21 @@ a.button_secondary {
     Popup
 ========================================= */
 
-.top-positioned {
-    position: absolute;
-    left: 0;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto;
+.visible {
+    display: block !important;
+}
+
+.noscroll{
+    overflow-y: hidden;
 }
 
 .popup__overlay {
+    display: none;
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
     z-index: 3;
 
     background-color: rgba(41, 41, 41, 0.6);
@@ -318,28 +315,20 @@ a.button_secondary {
     top: 0px;
 }
 
-.modal__close-button i {
-    position: relative;
-    left: 17px;
-    top: 14px;
-}
-
 .popup__pet-content{
-    position: absolute;
+    display: none;
+    position: fixed;
     width: 1200px;
     height: 697px;
     left: calc(50% - 1200px/2);
-    /* top: 80px; */
+    z-index: 4;
     top: 135px;
 }
 
 .popup__container {
-    position: absolute;
+   position: absolute;
     left: calc(50% - 900px/2);
     top: 52px;
-
-    /* card hover*/
-    /* box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04); */
 
     display: flex;
     width: 900px;

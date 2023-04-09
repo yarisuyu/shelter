@@ -65,3 +65,65 @@ function renderPet(petsFragment, index, pet) {
         renderModalWindow(pet);
     });
 }
+
+
+function renderModalWindow(pet) {
+    let body = document.querySelector('body');
+
+    let overlay = document.getElementById('overlay');
+    overlay.classList.add('visible');
+
+    let petContent = document.getElementById('modal');
+    petContent.classList.add('visible');
+
+    let closeBtn = addElement(petContent, 'button', 'modal__close-button');
+    addElement(closeBtn, 'i', 'fa-solid fa-xmark');
+
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('visible');
+        petContent.classList.remove('visible');
+
+
+        body.classList.remove('noscroll');
+    });
+
+    let popupContainer = addElement(petContent, 'div', 'popup__container', null, 'popup', new Map([
+        ['tabindex', '-1']
+    ]));
+
+    addElement(popupContainer, 'img', 'popup__img', null, null, new Map([
+        ['src', pet.img],
+        ['alt', `${pet.type} ${pet.name}`],
+        ['width', '500'],
+        ['height', '500']
+    ]))
+    let descContainer = addElement(popupContainer, 'div', 'description__content');
+    let descHeader = addElement(descContainer, 'div', 'description__header');
+    addElement(descHeader, 'h3', 'description__title', pet.name);
+    addElement(descHeader, 'h4', 'description__subtitle', `${pet.type} - ${pet.breed}`);
+
+    addElement(descContainer, 'h5', 'description__description', pet.description);
+    let traits = addElement(descContainer, 'ul', 'description__traits');
+    let age = addElement(traits, 'li');
+    let ageText = addElement(age, 'h5');
+    addElement(ageText, 'span', 'category', 'Age: ');
+    addElement(ageText, 'span', null, pet.age);
+
+
+    let inoculations = addElement(traits, 'li');
+    let inoculationsText = addElement(inoculations, 'h5');
+    addElement(inoculationsText, 'span', 'category', 'Inoculations: ');
+    addElement(inoculationsText, 'span', null, pet.inoculations.join(', '));
+
+    let diseases = addElement(traits, 'li');
+    let diseasesText = addElement(diseases, 'h5');
+    addElement(diseasesText, 'span', 'category', 'Diseases: ');
+    addElement(diseasesText, 'span', null, pet.diseases.join(', '));
+
+    let parasites = addElement(traits, 'li');
+    let parasitesText = addElement(parasites, 'h5');
+    addElement(parasitesText, 'span', 'category', 'Parasites: ');
+    addElement(parasitesText, 'span', null, pet.parasites.join(', '));
+
+    body.classList.add('noscroll');
+}

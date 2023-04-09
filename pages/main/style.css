@@ -336,6 +336,14 @@
 
 
 @media (max-width: 320px) {
+    .header nav {
+        background: url(../../assets/images/start-screen-gradient-background.png),
+            radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+            #211F20;
+        background-repeat: no-repeat, no-repeat;
+        background-position: top, top;
+    }
+
     .start-screen__content {
         padding-top: 1.8rem;
         align-items: center;

@@ -10,4 +10,9 @@ else if (width > 320) {
 }
 else {
     renderPetList(0, 1);
+
+    let burger = document.querySelector('.header__burger-btn');
+    burger.addEventListener('click', () => {
+        document.querySelector('.header').classList.toggle('open');
+    });
 }
