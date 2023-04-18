@@ -231,15 +231,24 @@ a.button_secondary {
     background-color: var(--color-primary-light);
 }
 
+.button-arrow:not(:disabled):hover,
+.button-paginator:not(:disabled):hover,
+.modal__close-button:not(:disabled):hover {
+    cursor: pointer;
+}
+
 .button-arrow:disabled,
-.button-paginator:disabled {
+.button-arrow:disabled:hover,
+.button-paginator:disabled,
+.button-paginator:disabled:hover {
     color: var(--color-light-xs);
     border: 2px solid var(--color-light-xs);
     background-color: inherit;
 }
 
-.button-paginator:active, .button-paginator.active {
+.button-paginator:active, .button-paginator#current-page {
     background-color: var(--color-primary);
+    cursor: default;
 }
 
 

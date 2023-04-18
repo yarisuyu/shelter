@@ -82,33 +82,13 @@
             <div class="wrapper">
                 <h3 class="pets__header">Our friends who <br> are looking for a house</h3>
                 <div class="pets__scroller">
-                    <button id="show-left-pets" class="button-arrow arrow-elips arrow-elips-link">
+                    <button id="pets-previous" class="button-arrow">
                         <img src="../../assets/icons/Arrow.svg" alt="" width="14" height="6" class="arrow-ico">
                     </button>
-                    <div class="pets__pet-list">
-                        <!-- <figure class="pet-card">
-                            <img class="pet-card-img" src="../../assets/images/pets-katrine.png" alt="" width="270" heigth="270">
-                            <figcaption class="pet-card-desc">
-                                <h4 class="pet-card-name">Katrine</h4>
-                                <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="pet-card">
-                            <img class="pet-card-img" src="../../assets/images/pets-jennifer.png" alt="" width="270" heigth="270">
-                            <figcaption class="pet-card-desc">
-                                <h4 class="pet-card-name">Jennifer</h4>
-                                <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="pet-card">
-                            <img class="pet-card-img" src="../../assets/images/pets-woody.png" alt="" width="270" heigth="270">
-                            <figcaption class="pet-card-desc">
-                                <h4 class="pet-card-name">Woody</h4>
-                                <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                            </figcaption>
-                        </figure> -->
+                    <div class="pets__pet-container">
+                        <div class="pets__pet-list"></div>
                     </div>
-                    <button href="#" id="show-right-pets" class="button-arrow arrow-elips arrow-elips-link">
+                    <button id="pets-next" class="button-arrow">
                         <img src="../../assets/icons/Arrow.svg" alt="" width="14" height="6" class="arrow-ico">
                     </button>
                 </div>
@@ -243,8 +223,9 @@
             </div>
         </div>
     </footer>
-    <div class="popup__pet-content" id="modal"></div>
-    <div class="popup__overlay" id="overlay"></div>
+    <div class="popup__overlay" id="overlay">
+        <div class="popup__pet-content" id="modal"></div>
+    </div>
 
 
     <script type="module" src="script.js"></script>

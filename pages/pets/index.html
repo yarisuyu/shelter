@@ -49,80 +49,13 @@
         <section class="pets">
             <div class="wrapper">
                 <h3 class="pets__header">Our friends who <br> are looking for a house</h3>
-                <div class="pets__pet-list">
-                    <!-- <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-katrine.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Katrine</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-jennifer.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Jennifer</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-woody.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Woody</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-sophia.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Sophia</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-timmy.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Timmy</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-charly.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Charly</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-scarlet.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Scarlett</div>
-                            <a href="#" class="button_secondary pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet-card">
-                        <img class="pet-card-img" src="../../assets/images/pets-freddie.png" alt="" width="270" heigth="270">
-                        <figcaption class="pet-card-desc">
-                            <div class="pet-card-name">Freddie</div>
-                            <a href="#" class="pet-card-link">Learn more</a>
-                        </figcaption>
-                    </figure> -->
-                </div>
+                <div class="pets__pet-list"></div>
                 <div class="pets__pagination">
-                    <button class="button-paginator" disabled>
-                        <span>&lt;&lt;</span>
-                    </button>
-                    <button class="button-paginator" disabled>
-                        <span>&lt;</span>
-                    </button>
-                    <button class="button-paginator active">
-                        <span>1</span>
-                    </button>
-                    <button class="button-paginator">
-                        <span>&gt;</span>
-                    </button>
-                    <button class="button-paginator">
-                        <span>&gt;&gt;</span>
-                    </button>
+                    <button class="button-paginator" id="to-first-page" disabled>&lt;&lt;</button>
+                    <button class="button-paginator" id="back" disabled>&lt;</button>
+                    <button class="button-paginator" id="current-page">1</button>
+                    <button class="button-paginator" id="forward">&gt;</button>
+                    <button class="button-paginator" id="to-last-page">&gt;&gt;</button>
                 </div>
             </div>
         </section>
@@ -162,8 +95,10 @@
             </div>
         </div>
     </footer>
-    <div class="popup__pet-content" id="modal"></div>
-    <div class="popup__overlay" id="overlay"></div>
+
+    <div class="popup__overlay" id="overlay">
+        <div class="popup__pet-content" id="modal"></div>
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>
