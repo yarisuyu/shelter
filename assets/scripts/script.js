@@ -24,61 +24,6 @@ export function addElement(container, type, className, innerText, id, attributes
     return element;
 }
 
-export function renderPetList(usePages = false) {
-    let petList = document.querySelector('.pets__pet-list');
-
-    let pageSize = +sessionStorage.getItem('pageSize');
-    let page = +sessionStorage.getItem('currentPage');
-
-    let i = 0;
-    fetch('../../assets/data/pets.json')
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            // if necessary generate the randomized pet index list
-            let previousPetCount = +sessionStorage.getItem('totalPetCount');
-            let randomizedPetList = getArrayFromSessionStorage('randomizedPetList');
-
-            if (previousPetCount != data.length || !randomizedPetList) {
-                randomizedPetList = generateRandomPetList(data.length, usePages);
-
-                page = 0;
-                sessionStorage.setItem('currentPage', 0);
-                sessionStorage.setItem('data', JSON.stringify(data));
-            }
-
-            if (usePages) {
-                const currentBtn = document.getElementById("current-page");
-                currentBtn.innerText = page + 1;
-
-                var petsFragment = new DocumentFragment();
-                for (let i = page * pageSize;
-                    i < randomizedPetList.length && i < (page + 1) * pageSize;
-                    i++) {
-                    let index = randomizedPetList[i];
-                    renderPet(petsFragment, index, data[index]);
-                }
-                petList.appendChild(petsFragment);
-            }
-            else {
-                // generate 3 slides with pageSize of elements each
-                const pageCount = randomizedPetList.length / pageSize;
-                for (let j = 0; j < pageCount; j++) {
-                    const shouldPrepend = false;
-                    renderPetSlide(petList, j, pageSize, randomizedPetList, shouldPrepend);
-                }
-
-                const slides = Array.from(petList.children);
-                if (slides && slides.length > 0) {
-                    const currentSlide = slides[1];
-                    currentSlide.classList.add('current-slide');
-
-                    slides.forEach((slide, index) => { setSlidePosition(slide, index - 1) });
-                }
-            }
-        });
-}
 
 function renderPet(petsFragment, index, pet) {
     const figure = addElement(petsFragment, 'figure', 'pet-card', null, index);
@@ -101,6 +46,7 @@ function renderPet(petsFragment, index, pet) {
 
 function generateUniqueRandomValues(min, max, count, exceptValues = []) {
     if (count > (max - min)) {
+        console.log("Error: unable to generate random values");
         return []; // ERROR!
     }
 
@@ -125,70 +71,63 @@ function generateUniqueRandomValues(min, max, count, exceptValues = []) {
 
 function generateRandomPetList(totalPetCount, usePages = false) {
     sessionStorage.setItem('totalPetCount', totalPetCount);
-
-    // create a set of numbers between 0 and totalPetCount
-    const randomizedPetList = new Set();
-
-    // add new numbers until the length of the set is totalPetCount
-    while (randomizedPetList.size < totalPetCount) {
-        randomizedPetList.add(Math.floor(Math.random() * totalPetCount));
-    }
-
-    let randomizedArray = Array.from(randomizedPetList);
+    let randomizedArray = [];
 
     if (!usePages) {
+        const SLIDE_COUNT = 3; // previous, current and next pages
         const pageSize = sessionStorage.getItem('pageSize');
-        const minArraySize = 3 * pageSize; // previous, current and next pages
+        const minArraySize = SLIDE_COUNT * pageSize;
+        randomizedArray = generateUniqueRandomValues(
+            0,
+            totalPetCount,
+            min(totalPetCount, minArraySize)
+        );
 
         let i = 0;
         while (randomizedArray.length < minArraySize) {
             randomizedArray.push(randomizedArray.at(i++));
         }
     } else {
-        for (let i = 0; i < 5; i++) {
-            randomizedPetList.clear();
+        const MAX_PAGE_COUNT = 6;
 
-            // each 8 elements will be different because they are generated
-            // using sets of 8 elements
+        randomizedArray = generateUniqueRandomValues(0, totalPetCount, totalPetCount);
 
-            // each 6 elements will be different because before
-            // generating the new 8 elements we prepopulate the set
-            // with the tail of the previous 8 elements
-            // that starts the new page of 6 elements
+        // each 8 elements will be different because they are generated
+        // using sets of 8 elements
 
-            // each 3 elements are different because they are contained inside
-            // pages of 6 elements
+        // each 6 elements will be different because before
+        // generating the new 8 elements we prepopulate the set
+        // with the tail of the previous 8 elements
+        // that starts the new page of 6 elements
 
+        // each 3 elements are different because they are contained inside
+        // pages of 6 elements
+
+        while (randomizedArray.length < MAX_PAGE_COUNT * totalPetCount) {
             // number of elements already created for the page of 6 elements
             let pageOfSixCurrentSize = randomizedArray.length % 6;
 
-            // add the elements already created for the page of 6 elemenst
-            for (let j = pageOfSixCurrentSize; j > 0; j--) {
-                randomizedPetList.add(randomizedArray.at(randomizedArray.length - j));
-            }
+            let randomizedArray1 = generateUniqueRandomValues(
+                0,
+                totalPetCount,
+                6 - pageOfSixCurrentSize,
+                pageOfSixCurrentSize ? randomizedArray.slice(-pageOfSixCurrentSize) : []
+            );
+            randomizedArray = randomizedArray.concat(randomizedArray1);
 
-            // generate the indices till the page of 6 elements is complete
-             while (randomizedPetList.size < 6) {
-                let index = Math.floor(Math.random() * totalPetCount);
-                randomizedPetList.add(index);
-            }
+            let pageOfEightCurrentSize = randomizedArray.length % 8;
 
-            // remove auxiliary indices from the set
-            for (let j = pageOfSixCurrentSize; j > 0; j--) {
-                randomizedPetList.delete(randomizedArray.at(randomizedArray.length - j));
-            }
-
-            // continue to generate indices until the page of 8 is generated
-            while (randomizedPetList.size < totalPetCount) {
-                randomizedPetList.add(Math.floor(Math.random() * totalPetCount));
-            }
-
-            randomizedArray = randomizedArray.concat(Array.from(randomizedPetList));
+            let randomizedArray2 = generateUniqueRandomValues(
+                0,
+                totalPetCount,
+                totalPetCount - pageOfEightCurrentSize,
+                pageOfEightCurrentSize ? randomizedArray.slice(-pageOfEightCurrentSize) : []
+            );
+            randomizedArray = randomizedArray.concat(randomizedArray2);
         }
     }
 
-    // store the list in the local storage
-    sessionStorage.setItem('randomizedPetList', (randomizedArray.join(',')));
+    sessionStorage.setItem('randomizedPetList', randomizedArray.join(','));
     return randomizedArray;
 }
 
@@ -214,9 +153,58 @@ function clearPetList() {
 }
 
 
-export function showRandomPets() {
-    const USE_PAGES = false;
-    renderPetList(USE_PAGES);
+function renderPetList(usePages = false) {
+    let petList = document.querySelector('.pets__pet-list');
+
+    let pageSize = +sessionStorage.getItem('pageSize');
+    let page = +sessionStorage.getItem('currentPage');
+
+    let i = 0;
+    fetch('../../assets/data/pets.json')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let previousPetCount = +sessionStorage.getItem('totalPetCount');
+            let randomizedPetList = getArrayFromSessionStorage('randomizedPetList');
+
+            // if data has changed,  generate the new randomized pet index list
+            if (previousPetCount != data.length || !randomizedPetList) {
+                randomizedPetList = generateRandomPetList(data.length, usePages);
+
+                page = 0;
+                sessionStorage.setItem('currentPage', 0);
+                sessionStorage.setItem('data', JSON.stringify(data));
+            }
+
+            if (usePages) {
+                const currentBtn = document.getElementById("current-page");
+                currentBtn.innerText = page + 1;
+
+                var petsFragment = new DocumentFragment();
+                for (let i = page * pageSize;
+                    i < randomizedPetList.length && i < (page + 1) * pageSize;
+                    i++) {
+                    let index = randomizedPetList[i];
+                    renderPet(petsFragment, index, data[index]);
+                }
+                petList.appendChild(petsFragment);
+            }
+            else {
+                // generate 3 slides with pageSize of elements each
+                const pageCount = randomizedPetList.length / pageSize;
+                for (let j = 0; j < pageCount; j++) {
+                    renderPetSlide(petList, j, pageSize, randomizedPetList);
+                }
+
+                const slides = Array.from(petList.children);
+                if (slides && slides.length > 0) {
+                    slides[1].classList.add('current-slide');
+                }
+
+                updateSlidePositions(petList);
+            }
+        });
 }
 
 const setSlidePosition = (slide, index) => {
@@ -225,9 +213,22 @@ const setSlidePosition = (slide, index) => {
     slide.style.left = (slideWidth + columnGap) * index + 'px';
 }
 
-function moveToSlide(track, currentSlide, targetSlide) {
+function updateSlidePositions(petList) {
+    const slides = Array.from(petList.children);
+
+    if (slides && slides.length > 0) {
+        slides.forEach((slide, index) => { setSlidePosition(slide, index - 1) });
+    }
+}
+
+function moveToSlide(track, moveNext = true) {
+    const currentSlide = petList.querySelector('.current-slide');
+
+    const targetSlide = moveNext
+        ? currentSlide.nextElementSibling
+        : currentSlide.previousElementSibling;
+
     const slidePosition = parseFloat(targetSlide.style.left);
-    const columnGap = parseFloat(getComputedStyle(currentSlide).columnGap);
 
     track.style.transform = 'translateX(-' + slidePosition + ')';
 
@@ -235,10 +236,8 @@ function moveToSlide(track, currentSlide, targetSlide) {
     targetSlide.classList.add('current-slide');
 }
 
-function renderPetSlide(pageList, page, pageSize, petIndexArray, shouldPrepend = true) {
-    let i = 0;
+function renderPetSlide(pageList, page, pageSize, petIndexArray, shouldPrepend = false) {
     const data = JSON.parse(sessionStorage.getItem('data'));
-    console.log(data);
     const slide = document.createElement('div');
     slide.className = 'pets__pet-slide';
 
@@ -264,11 +263,15 @@ function getArrayFromSessionStorage(key) {
     return strVal ? strVal.split(",") : null;
 }
 
-export function showPreviousPets() {
-    // all pets are prerendered, some are hidden
-    // show the effect of sliding left or right
-    // overflow is hidden
 
+/* initial and callback functions for the pet slider */
+
+export function showRandomPets() {
+    const USE_PAGES = false;
+    renderPetList(USE_PAGES);
+}
+
+export function showPreviousPets() {
     const petList = document.querySelector('.pets__pet-list');
     const pageSize = +sessionStorage.getItem('pageSize');
     const petCount = +sessionStorage.getItem('totalPetCount');
@@ -280,38 +283,28 @@ export function showPreviousPets() {
         return;
     }
 
+    // remove last slide of pets
     petList.lastChild.remove();
     for (let i = 0; i < pageSize; i++) {
         randomizedPetList.pop();
     }
 
-    // insert new 3 values of generated values to start
+    // insert new slide of pets to start
     let newValues = generateUniqueRandomValues(0, petCount, pageSize, randomizedPetList.slice(0, pageSize));
     randomizedPetList = newValues.concat(randomizedPetList);
+    const shouldPrepend = true;
+    renderPetSlide(petList, 0, pageSize, newValues, shouldPrepend);
 
-    renderPetSlide(petList, 0, pageSize, newValues);
 
     sessionStorage.setItem('randomizedPetList', randomizedPetList.join(','));
 
-    const slides = Array.from(petList.children);
-
-    const currentSlide = petList.querySelector('.current-slide');
-    const previousSlide = currentSlide.previousElementSibling;
-
-    moveToSlide(petList, currentSlide, previousSlide);
-
-    if (slides && slides.length > 0) {
-        slides.forEach((slide, index) => { setSlidePosition(slide, index - 1) });
-    }
+    const moveNext = false;
+    moveToSlide(petList, moveNext);
+    updateSlidePositions(petList);
 }
 
 export function showNextPets() {
-    // all pets are prerendered, some are hidden
-    // show the effect of sliding left or right
-    // overflow is hidden
-
     const petList = document.querySelector('.pets__pet-list');
-
     const pageSize = +sessionStorage.getItem('pageSize');
     const petCount = +sessionStorage.getItem('totalPetCount');
 
@@ -322,29 +315,22 @@ export function showNextPets() {
         return;
     }
 
+    // remove first page values
     petList.firstChild.remove();
-    // remove first 3 values
     randomizedPetList = randomizedPetList.slice(pageSize);
 
     // insert new 3 values of generated values to end
     let newValues = generateUniqueRandomValues(0, petCount, pageSize, randomizedPetList.slice(-pageSize));
     randomizedPetList.push(...newValues);
 
-    const shouldPrepend = false;
-    renderPetSlide(petList, 0, pageSize, newValues, shouldPrepend);
+    renderPetSlide(petList, 0, pageSize, newValues);
 
     sessionStorage.setItem('randomizedPetList', randomizedPetList.join(','));
 
-    const slides = Array.from(petList.children);
+    const moveNext = true;
+    moveToSlide(petList, moveNext);
 
-    const currentSlide = petList.querySelector('.current-slide');
-    const nextSlide = currentSlide.nextElementSibling;
-
-    moveToSlide(petList, currentSlide, nextSlide);
-
-    if (slides && slides.length > 0) {
-        slides.forEach((slide, index) => { setSlidePosition(slide, index - 1) });
-    }
+    updateSlidePositions(petList);
 }
 
 
@@ -382,6 +368,10 @@ function setPage(newPage, lastPage) {
     const USE_PAGES = true;
     renderPetList(USE_PAGES);
 }
+
+
+
+/* initial and callback functions for the pet paginator */
 
 export function showFirstPetPage() {
     return setPage(0, getLastPageNumber());
@@ -423,14 +413,13 @@ export function showNextPetPage() {
 }
 
 
-
+/* functions for the modal window */
 
 function closeModal() {
     document.getElementById('overlay').classList.remove('visible');
     document.getElementById('modal').classList.remove('visible');
     document.querySelector('body').classList.remove('noscroll');
 }
-
 
 function renderModalWindow(pet) {
     let body = document.querySelector('body');
