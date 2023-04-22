@@ -270,6 +270,12 @@ a.button_secondary {
 
 .pet-card:hover {
     background: var(--color-light-xl);
+    cursor: pointer;
+}
+
+.pet-card:hover .pet-card-link {
+    background-color: var(--color-primary-light);
+    border: 0;
 }
 
 .pet-card-img {
@@ -535,37 +541,7 @@ a.button_secondary {
     Responsive layout
 ========================================= */
 
-@media (max-width: 768px) {
-    .wrapper {
-        padding: 0 2rem;
-    }
-
-    .pet-card-img {
-        margin-bottom: 2rem;
-    }
-
-
-    .footer__content {
-        padding: 0 2.2rem;
-        grid-template-columns: 20.2rem 21rem;
-        grid-column-gap: 2.5rem;
-        grid-row-gap: 0.8rem;
-    }
-
-    .footer__content div:last-of-type {
-        grid-row: auto;
-        grid-column: 1 / -1;
-        justify-self: center;
-        padding-top: 1.6rem;
-        padding-right: 1.6rem;
-    }
-
-    .footer__header {
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
     html {
         font-size: 10px;
     }
@@ -635,12 +611,22 @@ a.button_secondary {
 
     .footer__content {
         grid-template-columns: 1fr !important;
-        grid-template-rows: 9rem 5rem 6rem 10rem 5.5rem 6.5rem 1fr !important;
+        grid-template-rows: 9rem 5.3rem 5.8rem 9rem 6.8rem 6.5rem 1fr !important;
         grid-row-gap: 1.5rem !important;
         justify-content: center;
         align-items: center;
 
-        padding: 2rem 0.5rem 0 !important;
+        padding: 2rem 0 0 !important;
+    }
+
+    .footer__header {
+        text-align: center;
+        max-width: 29rem;
+        margin-left: 0.5rem;
+    }
+
+    .footer__line {
+        column-gap: 1.8rem;
     }
 
     .footer__line.col-1 {
@@ -666,18 +652,52 @@ a.button_secondary {
     .footer__content div:last-child {
         padding-top: 0 !important;
         padding-right: 1rem !important;
+        grid-row: auto;
+        grid-column: auto;
     }
 
     .footer__img {
         width: 260px;
         height: 269px;
-    }
-
-    .footer__header {
-        text-align: center;
+        padding-left: 1.9rem;
     }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .wrapper {
+        padding: 0 2rem;
+    }
+
+    .pet-card-img {
+        margin-bottom: 2rem;
+    }
+
+
+    .footer__content {
+        padding: 0 2.2rem;
+        grid-template-columns: 20.2rem 21rem;
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 0.8rem;
+    }
+
+    .footer__content div:last-of-type {
+        grid-row: auto;
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding-top: 1.6rem;
+        padding-right: 1.6rem;
+    }
+
+    .footer__header {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .help__need-item.empty {
+        display: none !important;
+    }
+}
 
 /* ======================================
     Responsive layout end

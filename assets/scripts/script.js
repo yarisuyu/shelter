@@ -37,7 +37,7 @@ function renderPet(petsFragment, index, pet) {
     const caption = addElement(figure, 'figcaption', 'pet-card-desc');
 
     addElement(caption, 'h4', 'pet-card-name', pet.name);
-    let petLink = addElement(caption, 'button', 'button_secondary pet-card-link', 'Learn more');
+    let petLink = addElement(caption, 'a', 'button_secondary pet-card-link', 'Learn more');
 
     petLink.addEventListener('click', (event) => {
         renderModalWindow(pet);
@@ -80,7 +80,7 @@ function generateRandomPetList(totalPetCount, usePages = false) {
         randomizedArray = generateUniqueRandomValues(
             0,
             totalPetCount,
-            min(totalPetCount, minArraySize)
+            Math.min(totalPetCount, minArraySize)
         );
 
         let i = 0;
@@ -222,7 +222,7 @@ function updateSlidePositions(petList) {
 }
 
 function moveToSlide(track, moveNext = true) {
-    const currentSlide = petList.querySelector('.current-slide');
+    const currentSlide = track.querySelector('.current-slide');
 
     const targetSlide = moveNext
         ? currentSlide.nextElementSibling
