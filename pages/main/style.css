@@ -112,13 +112,13 @@
 }
 
 .pets__scroller {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3.5rem 994px 3.5rem;
+    grid-template-rows: 29rem;
+    column-gap: 3.5rem;
+    justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
-    column-gap: 1.5rem;
-    height: 29rem;
 }
 
 .button-arrow:last-of-type .arrow-ico {
@@ -126,6 +126,7 @@
 }
 
 .pets__pet-container {
+    justify-self: center;
     overflow: hidden;
     height: 100%;
 }
@@ -243,7 +244,7 @@
 .donation__content {
     max-width: 24rem;
     padding-top: 0.6rem;
-    padding-right: 1rem;
+    padding-right: 1.2rem;
 }
 
 .donation__header {
@@ -296,7 +297,7 @@
     }
 
     .start-screen .wrapper {
-        justify-content: flex-end;
+        flex-direction: column;
     }
 
     .start-screen__content {
@@ -361,26 +362,33 @@
     }
 
     .pets__scroller {
-        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 44rem 5.2rem;
         row-gap: 1.6rem;
-        column-gap: 8rem;
-        margin-bottom: 6.8rem;
-        min-height: 44rem;
+        margin-bottom: 0rem;
     }
 
-    .pets__pet-list {
-        order: 1;
-        margin-bottom: 0.5rem;
-        max-width: 27rem;
-        width: 100vw;
+    .pets__pet-container {
+        grid-row: 1;
+        grid-column: 1/-1;
     }
 
     .pets__scroller .button-arrow:first-of-type {
-        order: 2;
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: calc(50% - 9.2rem);
     }
 
     .pets__scroller .button-arrow:last-of-type {
-        order: 3;
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: calc(50% + 4rem);
+    }
+
+    .pets__pet-list {
+        margin-bottom: 0.5rem;
+        max-width: 27rem;
+        width: 100vw;
     }
 
     .pet-card-img {
@@ -512,7 +520,8 @@
     }
 
     .pets__scroller {
-        column-gap: 0.6rem;
+        grid-template-columns: 3.5rem 1fr 3.5rem;
+        column-gap: 1rem;
     }
 
     .pets__pet-list {

@@ -8,10 +8,10 @@ import {
 
 let width = screen.width;
 
-if (width > 768) {
+if (width >= 1280) {
     sessionStorage.setItem('pageSize', '3');
 }
-else if (width > 320) {
+else if (width >= 768) {
     sessionStorage.setItem('pageSize', '2');
 }
 else {

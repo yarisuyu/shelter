@@ -473,6 +473,7 @@ a.button_secondary {
     padding-top: 1.5rem;
 
     display: grid;
+    justify-content: center;
     grid-template-rows: 9rem 4.1rem 3.5rem 1fr;
     grid-template-columns: 20.2rem 21rem 1fr;
     grid-column-gap: 9rem;
@@ -611,7 +612,7 @@ a.button_secondary {
 
     .footer__content {
         grid-template-columns: 1fr !important;
-        grid-template-rows: 9rem 5.3rem 5.8rem 9rem 6.8rem 6.5rem 1fr !important;
+        grid-template-rows: 9rem 5.3rem 5.8rem 9rem 7rem 6rem 1fr !important;
         grid-row-gap: 1.5rem !important;
         justify-content: center;
         align-items: center;
@@ -619,22 +620,23 @@ a.button_secondary {
         padding: 2rem 0 0 !important;
     }
 
+    .footer__content > * {
+        justify-self: center;
+    }
+
     .footer__header {
         text-align: center;
         max-width: 29rem;
-        margin-left: 0.5rem;
+        margin: 0 auto;
     }
 
     .footer__line {
         column-gap: 1.8rem;
     }
 
-    .footer__line.col-1 {
-        justify-self: center;
-    }
-
     .footer__content .col-2 {
         grid-column: 1;
+        width: 30rem;
     }
 
     .footer__header.col-2 {
@@ -651,7 +653,7 @@ a.button_secondary {
 
     .footer__content div:last-child {
         padding-top: 0 !important;
-        padding-right: 1rem !important;
+        padding-right: 2rem !important;
         grid-row: auto;
         grid-column: auto;
     }
@@ -674,8 +676,8 @@ a.button_secondary {
 
 
     .footer__content {
-        padding: 0 2.2rem;
-        grid-template-columns: 20.2rem 21rem;
+        padding: 0;
+        grid-template-columns: 20rem 20rem;
         grid-column-gap: 2.5rem;
         grid-row-gap: 0.8rem;
     }
@@ -685,7 +687,7 @@ a.button_secondary {
         grid-column: 1 / -1;
         justify-self: center;
         padding-top: 1.6rem;
-        padding-right: 1.6rem;
+        padding-right: 1rem;
     }
 
     .footer__header {
