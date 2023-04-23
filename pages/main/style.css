@@ -134,6 +134,7 @@
 
 .pets__pet-list {
     width: 77vw;
+    max-width: 1040px;
     position: relative;
     height: 100%;
     transition: transform 0.5s ease-in;

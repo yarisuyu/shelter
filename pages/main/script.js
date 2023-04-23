@@ -2,8 +2,7 @@ import {
     showRandomPets,
     showPreviousPets,
     showNextPets,
-    showNavMenu,
-    hideNavMenu
+    toggleNavMenu
 } from "../../assets/scripts/script.js"
 
 
@@ -20,18 +19,18 @@ else {
     sessionStorage.setItem('pageSize', '1');
 
     document.querySelector('.header__burger-btn')
-        .addEventListener('click', showNavMenu);
+        .addEventListener('click', toggleNavMenu);
 
 
     document.getElementById("nav-menu")
         .addEventListener('click', e => {
             if (e.target.tagName.toLowerCase() === 'a') {
-                hideNavMenu();
+                toggleNavMenu();
             }
         });
 
     document.getElementById("overlay")
-        .addEventListener('click', hideNavMenu);
+        .addEventListener('click', toggleNavMenu);
 }
 
 

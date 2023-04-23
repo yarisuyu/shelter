@@ -3,8 +3,7 @@ import {
     showLastPetPage,
     showPreviousPetPage,
     showNextPetPage,
-    showNavMenu,
-    hideNavMenu
+    toggleNavMenu
 } from "../../assets/scripts/script.js"
 
 let width = screen.width;
@@ -19,18 +18,18 @@ else {
     sessionStorage.setItem('pageSize', '3');
 
     document.querySelector('.header__burger-btn')
-        .addEventListener('click', showNavMenu);
+        .addEventListener('click', toggleNavMenu);
 
 
     document.getElementById("nav-menu")
         .addEventListener('click', e => {
             if (e.target.tagName.toLowerCase() === 'a') {
-                hideNavMenu();
+                toggleNavMenu();
             }
         });
 
     document.getElementById("overlay")
-        .addEventListener('click', hideNavMenu);
+        .addEventListener('click', toggleNavMenu);
 }
 
 showFirstPetPage();

@@ -86,6 +86,10 @@
         position: unset;
     }
 
+    .header.open .header__burger-btn {
+        top: 3.6rem;
+    }
+
     .header nav {
         background-color: var(--color-light-xl);
     }
