@@ -1,7 +1,9 @@
 import {
     showRandomPets,
     showPreviousPets,
-    showNextPets
+    showNextPets,
+    showNavMenu,
+    hideNavMenu
 } from "../../assets/scripts/script.js"
 
 
@@ -17,10 +19,19 @@ else if (width >= 768) {
 else {
     sessionStorage.setItem('pageSize', '1');
 
-    let burger = document.querySelector('.header__burger-btn');
-    burger.addEventListener('click', () => {
-        document.querySelector('.header').classList.toggle('open');
-    });
+    document.querySelector('.header__burger-btn')
+        .addEventListener('click', showNavMenu);
+
+
+    document.getElementById("nav-menu")
+        .addEventListener('click', e => {
+            if (e.target.tagName.toLowerCase() === 'a') {
+                hideNavMenu();
+            }
+        });
+
+    document.getElementById("overlay")
+        .addEventListener('click', hideNavMenu);
 }
 
 

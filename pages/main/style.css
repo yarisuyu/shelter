@@ -18,6 +18,7 @@
         #211F20;
     background-repeat: no-repeat, no-repeat;
     background-position: top, top;
+    background-size: cover;
 }
 
 .start-screen .wrapper {
@@ -289,11 +290,7 @@
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
     .header nav {
-        background: url(../../assets/images/start-screen-gradient-background.png),
-            radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-            #211F20;
-        background-repeat: no-repeat, no-repeat;
-        background-position: top, top;
+        background-color: var(--color-dark-3xl);
     }
 
     .start-screen .wrapper {
@@ -414,12 +411,12 @@
     }
 
     .help__needs-list {
-        column-gap: 9.6rem;
+        column-gap: 1.6rem;
         row-gap: 2.4rem;
     }
 
     .help__need-item {
-        width: 65px;
+        width: 142px;
     }
 
     .help__need-item-img {

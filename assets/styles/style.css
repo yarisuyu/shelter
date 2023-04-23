@@ -103,6 +103,10 @@ h1 {
     letter-spacing: 0.06em;
 }
 
+.header__logo {
+    transition: transform .5s;
+}
+
 .header__logo-title {
     color: var(--color-primary);
     margin-bottom: 0;
@@ -426,30 +430,16 @@ a.button_secondary {
     background-color: var(--color-primary);
     left: 0;
 
-    z-index: 2;
+    z-index: 4;
     transition: transform .5s;
 }
 
 .header__burger-btn span:nth-child(1) {
     transform: translateY(-11px);
-
 }
 
 .header__burger-btn span:nth-child(2) {
     transform: translateY(10px);
-}
-
-.header.open .header__burger-btn span {
-    transform: rotate(90deg);
-}
-
-.header.open .header__burger-btn span:nth-child(1) {
-    transform: rotate(90deg) translateY(-11px);
-
-}
-
-.header.open .header__burger-btn span:nth-child(2) {
-    transform: rotate(90deg) translateY(10px);
 }
 
 /* ======================================
@@ -573,14 +563,15 @@ a.button_secondary {
 
     .header nav {
         position: absolute;
-        left: -320px;
-        top: 12rem;
+        right: -320px;
+        top: 0;
+        padding-top: 12rem;
         width: 320px;
-        height: calc(100vh - 12rem);
-        overflow-y: hidden;
-        background-color: #fff;
+        height: 100vh;
+        overflow: hidden;
 
         transition: transform .5s;
+        z-index: 4;
     }
 
     .header__nav-items {
@@ -600,8 +591,44 @@ a.button_secondary {
         padding-bottom: 0.3em;
     }
 
+
+    .header.open .header__burger-btn span {
+        transform: rotate(90deg);
+    }
+
+    .header.open .header__burger-btn span:nth-child(1) {
+        transform: rotate(90deg) translateY(-11px);
+
+    }
+
+    .header.open .header__burger-btn span:nth-child(2) {
+        transform: rotate(90deg) translateY(10px);
+    }
+
     .header.open .header__nav {
-        transform: translateX(100%);
+        transform: translateX(-100%);
+    }
+
+    .header.open .header__logo {
+        position: absolute;
+        top: 1rem;
+        right: calc(-320px + 26rem);
+        z-index: 5;
+        max-width: 320px;
+        transform: translateX(-100%);
+    }
+
+    .header.open .header__burger-btn {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        z-index: 4;
+    }
+
+    .header.open ~ .popup__overlay {
+        display: block;
+        height: 100vh;
+        overflow-y: hidden;
     }
 
 

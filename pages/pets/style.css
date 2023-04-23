@@ -1,5 +1,11 @@
 /* Header starts */
 
+.header {
+    position: fixed;
+    background: var(--color-light-xl);
+    width: 100%;
+}
+
 .header__content {
     padding: 0.6rem 0 2rem;
     align-items: center;
@@ -26,7 +32,7 @@
 /* Own pets starts */
 
 .pets {
-    padding: 5.4rem 0 6.6rem;
+    padding: 13.4rem 0 6.6rem;
     background-color: var(--color-light-l);
 }
 
@@ -76,8 +82,16 @@
         margin-top: 1.1rem;
     }
 
+    .header.open {
+        position: unset;
+    }
+
+    .header nav {
+        background-color: var(--color-light-xl);
+    }
+
     .pets {
-        padding: 4.1rem 0 4.2rem;
+        padding: 16.2rem 0 4.2rem;
     }
 
     .pets__header {

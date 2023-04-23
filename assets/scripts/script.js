@@ -422,8 +422,6 @@ function closeModal() {
 }
 
 function renderModalWindow(pet) {
-    let body = document.querySelector('body');
-
     let overlay = document.getElementById('overlay');
     overlay.classList.add('visible');
     overlay.addEventListener('click', closeModal);
@@ -475,5 +473,15 @@ function renderModalWindow(pet) {
     addElement(parasitesText, 'span', 'category', 'Parasites: ');
     addElement(parasitesText, 'span', null, pet.parasites.join(', '));
 
-    body.classList.add('noscroll');
+    document.querySelector('body').classList.add('noscroll');
+}
+
+export function showNavMenu() {
+    document.getElementById("header").classList.toggle("open");
+    document.querySelector('body').classList.add('noscroll');
+}
+
+export function hideNavMenu() {
+    document.getElementById("header").classList.toggle("open");
+    document.querySelector('body').classList.remove('noscroll');
 }
