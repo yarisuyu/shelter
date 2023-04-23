@@ -564,8 +564,9 @@ a.button_secondary {
         padding-top: 0.7rem;
     }
 
-    .header__nav-wrapper {
+    .header {
         position: relative;
+        overflow-x: clip;
     }
 
     .header nav {
