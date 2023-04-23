@@ -92,8 +92,6 @@ nav li {
     Logo
 ========================================= */
 
-/* TODO: make the logo a link */
-
 h1 {
     font-family: 'Georgia', 'Roboto Serif', serif;
     font-size: 32px;
@@ -339,10 +337,10 @@ a.button_secondary {
 .popup__pet-content{
     display: none;
     position: fixed;
-    top: 32vh;
+    top: 15.8vh;
     left: calc(50% - 90vw/2);
     width: 90vw;
-    min-height: 32vh;
+    height: 500px;
     z-index: 4;
 }
 
@@ -353,11 +351,9 @@ a.button_secondary {
 
     display: flex;
     width: 70vw;
-    min-height: 500px;
+    height: 500px;
     background-color: var(--color-light-s);
     border-radius: 9px;
-
-    overflow-y: scroll;
 }
 
 .popup__img {
@@ -366,6 +362,7 @@ a.button_secondary {
 
 .description__content {
     padding: 16px 20px 0 30px;
+    overflow-y: scroll;
 }
 
 .description__title, .description__subtitle,
@@ -423,6 +420,8 @@ a.button_secondary {
 .header__burger-btn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    height: 40px;
 
     display: none;
 }
@@ -565,6 +564,11 @@ a.button_secondary {
         padding-top: 0.7rem;
     }
 
+    .header {
+        position: relative;
+        overflow-x: clip;
+    }
+
     .header nav {
         position: absolute;
         right: -320px;
@@ -572,7 +576,6 @@ a.button_secondary {
         padding-top: 12rem;
         width: 320px;
         height: 100vh;
-        overflow: hidden;
 
         transition: transform .5s;
         z-index: 4;
@@ -583,6 +586,7 @@ a.button_secondary {
         flex-direction: column;
         row-gap: 4.1rem;
         padding: 11.8rem 10px 0;
+        overflow: hidden;
     }
 
     .nav__link {
@@ -594,7 +598,6 @@ a.button_secondary {
     .nav__link.active {
         padding-bottom: 0.3em;
     }
-
 
     .header.open .header__burger-btn span {
         transform: rotate(90deg);
@@ -624,13 +627,14 @@ a.button_secondary {
 
     .header.open .header__burger-btn {
         position: absolute;
-        top: 5rem;
-        right: 1rem;
+        top: 3.5rem;
+        right: 1.6rem;
         z-index: 4;
     }
 
     .header.open ~ .popup__overlay {
         display: block;
+        width: 100vw;
         height: 100vh;
         overflow-y: hidden;
     }
@@ -698,6 +702,49 @@ a.button_secondary {
     .popup__img {
         display: none;
     }
+
+    .popup__pet-content {
+        top: 19.2vh;
+    }
+
+    .modal__close-button {
+        left: calc(50% + 75vw/2 - 22px);
+    }
+
+    .popup__container {
+        top: 6vh;
+        left: calc(50% - 75vw/2);
+        width: 75vw;
+        height: 341px;
+    }
+
+    .description__content {
+        padding: 0px 8px 0 10px;
+        height: 341px;
+    }
+
+    .description__header {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .description__title {
+        margin-top: 1rem;
+        font-size: 35px;
+    }
+
+    .description__description {
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .description__content>h5 {
+        margin-block: 0;
+    }
+
+    .description__traits li h5 {
+        margin-block: 2.05rem;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
@@ -729,9 +776,52 @@ a.button_secondary {
         margin-top: 2rem;
     }
 
+
+    .popup__pet-content {
+        top: 21.8vh;
+    }
+
+    .modal__close-button {
+        left: calc(50% + 82vw/2 - 8px);
+    }
+
+    .popup__container {
+        top: 8vh;
+        left: calc(50% - 82vw/2);
+        width: 82vw;
+        height: 350px;
+    }
+
     .popup__img {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .description__content {
+        padding: 0px 8px 0 10px;
+        height: 350px;
+    }
+
+    .description__header {
+        margin-bottom: 20px;
+    }
+
+    .description__title {
+        margin-top: 0.6rem;
+    }
+
+    .description__description {
+        margin-bottom: 20px;
+        font-size: 13px;
+        max-width: 17.8rem;
+    }
+
+    .description__content > h5 {
+        margin-block: 0;
+    }
+
+    .description__traits li h5 {
+        margin-block: 1.32rem;
     }
 }
 
