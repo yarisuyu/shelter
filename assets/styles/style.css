@@ -92,8 +92,6 @@ nav li {
     Logo
 ========================================= */
 
-/* TODO: make the logo a link */
-
 h1 {
     font-family: 'Georgia', 'Roboto Serif', serif;
     font-size: 32px;
@@ -422,6 +420,8 @@ a.button_secondary {
 .header__burger-btn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    height: 40px;
 
     display: none;
 }
@@ -564,6 +564,10 @@ a.button_secondary {
         padding-top: 0.7rem;
     }
 
+    .header__nav-wrapper {
+        position: relative;
+    }
+
     .header nav {
         position: absolute;
         right: -320px;
@@ -571,7 +575,6 @@ a.button_secondary {
         padding-top: 12rem;
         width: 320px;
         height: 100vh;
-        overflow: hidden;
 
         transition: transform .5s;
         z-index: 4;
@@ -582,6 +585,7 @@ a.button_secondary {
         flex-direction: column;
         row-gap: 4.1rem;
         padding: 11.8rem 10px 0;
+        overflow: hidden;
     }
 
     .nav__link {
@@ -593,7 +597,6 @@ a.button_secondary {
     .nav__link.active {
         padding-bottom: 0.3em;
     }
-
 
     .header.open .header__burger-btn span {
         transform: rotate(90deg);
@@ -623,8 +626,8 @@ a.button_secondary {
 
     .header.open .header__burger-btn {
         position: absolute;
-        top: 5rem;
-        right: 1rem;
+        top: 3.5rem;
+        right: 1.6rem;
         z-index: 4;
     }
 

@@ -294,6 +294,10 @@
         background-color: var(--color-dark-3xl);
     }
 
+    .header.open .header__content {
+        padding-top: 10rem !important;
+    }
+
     .start-screen .wrapper {
         flex-direction: column;
     }
@@ -552,6 +556,10 @@
 
     .donation__container {
         padding-bottom: 0.8rem;
+    }
+
+    .description__description {
+        font-size: 13px;
     }
 }
 

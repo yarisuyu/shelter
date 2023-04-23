@@ -4,6 +4,7 @@
     position: fixed;
     background: var(--color-light-xl);
     width: 100%;
+
     max-width: 1280px;
 }
 
@@ -18,10 +19,6 @@
 
 .header__nav {
     padding-top: 1rem;
-}
-
-.header__burger-btn {
-    padding-top: 2.2rem;
 }
 
 .header__burger-btn span {
@@ -85,6 +82,14 @@
 
     .header.open {
         position: unset;
+    }
+
+    header.open .header__content {
+        height: 8rem;
+    }
+
+    header.open ~ main .pets {
+        padding-top: 2.2rem;
     }
 
     .header.open .header__burger-btn {
