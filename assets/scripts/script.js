@@ -39,7 +39,7 @@ function renderPet(petsFragment, index, pet) {
     addElement(caption, 'h4', 'pet-card-name', pet.name);
     let petLink = addElement(caption, 'a', 'button_secondary pet-card-link', 'Learn more');
 
-    petLink.addEventListener('click', (event) => {
+    figure.addEventListener('click', (event) => {
         renderModalWindow(pet);
     });
 }
@@ -424,20 +424,35 @@ function closeModal() {
 function renderModalWindow(pet) {
     let overlay = document.getElementById('overlay');
     overlay.classList.add('visible');
-    overlay.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => {
+        if (!document.getElementById("modal").contains(e.target)) {
+            closeModal();
+        }
+    });
 
     overlay.addEventListener('mouseover', (event) => {
-        console.log(event);
+        const closeBtn = document.getElementById("modal-close");
+
+        if (!document.getElementById("popup-body").contains(event.target)) {
+            if (!closeBtn.classList.contains("hover")) {
+                closeBtn.classList.add("hover");
+            }
+        }
+        else {
+            if (closeBtn.classList.contains("hover")) {
+                closeBtn.classList.remove("hover");
+            }
+        }
     });
 
     let petContent = document.getElementById('modal');
     petContent.classList.add('visible');
 
-    let closeBtn = addElement(petContent, 'button', 'modal__close-button');
+    let closeBtn = addElement(petContent, 'button', 'modal__close-button', null, 'modal-close');
     addElement(closeBtn, 'i', 'fa-solid fa-xmark');
     closeBtn.addEventListener('click', closeModal);
 
-    let popupContainer = addElement(petContent, 'div', 'popup__container');
+    let popupContainer = addElement(petContent, 'div', 'popup__container', null, 'popup-body');
 
     addElement(popupContainer, 'img', 'popup__img', null, null, new Map([
         ['src', pet.img],
@@ -476,12 +491,12 @@ function renderModalWindow(pet) {
     document.querySelector('body').classList.add('noscroll');
 }
 
-export function showNavMenu() {
+export function toggleNavMenu() {
     document.getElementById("header").classList.toggle("open");
-    document.querySelector('body').classList.add('noscroll');
+    document.querySelector('body').classList.toggle('noscroll');
 }
 
 export function hideNavMenu() {
     document.getElementById("header").classList.toggle("open");
-    document.querySelector('body').classList.remove('noscroll');
+    document.querySelector('body').classList.toggle('noscroll');
 }

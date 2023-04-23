@@ -231,8 +231,10 @@ a.button_secondary {
 
 .button-arrow:hover,
 .button-paginator:hover,
-.modal__close-button:hover {
+.modal__close-button:hover,
+.modal__close-button.hover {
     background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
 }
 
 .button-arrow:not(:disabled):hover,
@@ -330,30 +332,32 @@ a.button_secondary {
 
 .modal__close-button {
     position: absolute;
-    left: calc(50% + 900px/2 - 12px);
+    left: calc(50% + 70vw/2 - 8px);
     top: 0px;
 }
 
 .popup__pet-content{
     display: none;
     position: fixed;
-    width: 1200px;
-    height: 697px;
-    left: calc(50% - 1200px/2);
+    top: 32vh;
+    left: calc(50% - 90vw/2);
+    width: 90vw;
+    min-height: 32vh;
     z-index: 4;
-    top: 135px;
 }
 
 .popup__container {
    position: absolute;
-    left: calc(50% - 900px/2);
+    left: calc(50% - 70vw/2);
     top: 52px;
 
     display: flex;
-    width: 900px;
-    height: 500px;
+    width: 70vw;
+    min-height: 500px;
     background-color: var(--color-light-s);
     border-radius: 9px;
+
+    overflow-y: scroll;
 }
 
 .popup__img {
@@ -690,6 +694,10 @@ a.button_secondary {
         height: 269px;
         padding-left: 1.9rem;
     }
+
+    .popup__img {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
@@ -719,6 +727,11 @@ a.button_secondary {
 
     .footer__header {
         margin-top: 2rem;
+    }
+
+    .popup__img {
+        width: 300px;
+        height: 300px;
     }
 }
 
