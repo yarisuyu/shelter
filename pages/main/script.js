@@ -30,7 +30,11 @@ else {
         });
 
     document.getElementById("overlay")
-        .addEventListener('click', toggleNavMenu);
+        .addEventListener('click', () => {
+            if (document.querySelector("header").classList.contains("open")) {
+                toggleNavMenu();
+            }
+        });
 }
 
 
