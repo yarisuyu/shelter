@@ -1,0 +1,746 @@
+:root {
+    --color-primary: #F1CDB3;
+    --color-primary-light: #FDDCC4;
+    --color-dark-3xl: #292929;
+    --color-dark-xl: #4C4C4C;
+    --color-dark-l: #545454;
+    --color-dark-m: #B2B2B2;
+    --color-dark-s: #E5E5E5;
+    --color-light-xl: #FFFFFF;
+    --color-light-l: #F6F6F6;
+    --color-light-s: #FAFAFA;
+    --color-light-xs: #CDCDCD;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    color: var(--color-dark-3xl);
+}
+
+.wrapper {
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2, h3, h4, h5 {
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
+h2 {
+    font-size: 2.93rem; /*44px;*/
+    line-height: 130%;
+}
+
+h3 {
+    font-size: 35px;
+    line-height: 130%;
+}
+
+h4 {
+    font-size: 20px; /*20px*/
+    line-height: 115%;
+}
+
+h5 {
+    font-size: 15px; /*15px*/
+    line-height: 110%;
+}
+
+p {
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-size: 15px; /*15px*/
+    line-height: 160%;
+    color: var(--color-dark-xl);
+}
+
+p.small {
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: .8rem; /*12px*/
+    line-height: 150%;
+    color: var(--color-dark-m);
+}
+
+div img {
+    display: block;
+}
+
+li::marker {
+    color: var(--color-primary);
+}
+
+nav li {
+    list-style-type: none;
+}
+
+/* ======================================
+    Logo
+========================================= */
+
+/* TODO: make the logo a link */
+
+h1 {
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+.header__logo {
+    transition: transform .5s;
+}
+
+.header__logo-title {
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
+
+.header__logo-subtitle {
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 100%; /*15px;*/
+    letter-spacing: 0.1em;
+    color: var(--color-light-xl);
+
+    padding-left: 4px;
+    margin-top: 0.7rem;
+}
+
+/* ======================================
+    Logo end
+========================================= */
+
+
+/* ======================================
+    Links
+========================================= */
+
+a {
+    font-family: 'Arial', 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+a.light {
+    color: var(--color-light-xs);
+}
+
+a.dark {
+    color: var(--color-dark-l);
+}
+
+a.active {
+    padding-bottom: 3px;
+    border-bottom: 3px solid var(--color-primary);
+    cursor: none;
+}
+
+a.light.active {
+    color: var(--color-light-s);
+}
+
+a:hover {
+    cursor: pointer;
+    border-bottom: none;
+}
+
+a.light:hover {
+    color: var(--color-light-s);
+}
+
+a.dark:hover {
+    color: var(--color-dark-3xl);
+}
+
+
+/* ======================================
+    Links end
+========================================= */
+
+/* ======================================
+    Buttons
+========================================= */
+
+.button_primary {
+    padding: 15px 45px;
+    background-color: var(--color-primary);
+    border-radius: 100px;
+}
+
+.button_secondary {
+    padding: 15px 45px;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    background: inherit;
+}
+
+.button_primary:hover, .button_secondary:hover {
+    background-color: var(--color-primary-light);
+    border: 0;
+}
+
+a.button_primary,
+a.button_secondary {
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+}
+
+.button-arrow, .button-paginator, .modal__close-button {
+    width: 52px;
+    height: 52px;
+
+    box-sizing: border-box;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    background-color: inherit;
+
+    font-family: 'Georgia', 'Roboto Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+}
+
+.button-arrow {
+    padding: 17px;
+}
+
+.button-arrow:hover,
+.button-paginator:hover,
+.modal__close-button:hover,
+.modal__close-button.hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+}
+
+.button-arrow:not(:disabled):hover,
+.button-paginator:not(:disabled):hover,
+.modal__close-button:not(:disabled):hover {
+    cursor: pointer;
+}
+
+.button-arrow:disabled,
+.button-arrow:disabled:hover,
+.button-paginator:disabled,
+.button-paginator:disabled:hover {
+    color: var(--color-light-xs);
+    border: 2px solid var(--color-light-xs);
+    background-color: inherit;
+}
+
+.button-paginator:active, .button-paginator#current-page {
+    background-color: var(--color-primary);
+    cursor: default;
+}
+
+
+/* ======================================
+    Buttons end
+========================================= */
+
+/* ======================================
+    Cards
+========================================= */
+
+.pet-card {
+    width: 270px;
+    height: 435px;
+
+    background: var(--color-light-s);
+    border-radius: 9px;
+}
+
+.pet-card:hover {
+    background: var(--color-light-xl);
+    cursor: pointer;
+}
+
+.pet-card:hover .pet-card-link {
+    background-color: var(--color-primary-light);
+    border: 0;
+}
+
+.pet-card-img {
+    border-radius: 9px 9px 0px 0px;
+    margin-bottom: 1.8rem;
+}
+
+.pet-card-desc {
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+
+    margin-bottom: 30px;
+}
+
+.pet-card-name {
+    margin-bottom: 3rem;
+}
+
+/* ======================================
+    Cards end
+========================================= */
+
+/* ======================================
+    Popup
+========================================= */
+
+.visible {
+    display: block !important;
+}
+
+.noscroll{
+    overflow-y: hidden;
+}
+
+.popup__overlay {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+
+    background-color: rgba(41, 41, 41, 0.6);
+}
+
+.modal__close-button {
+    position: absolute;
+    left: calc(50% + 70vw/2 - 8px);
+    top: 0px;
+}
+
+.popup__pet-content{
+    display: none;
+    position: fixed;
+    top: 32vh;
+    left: calc(50% - 90vw/2);
+    width: 90vw;
+    min-height: 32vh;
+    z-index: 4;
+}
+
+.popup__container {
+   position: absolute;
+    left: calc(50% - 70vw/2);
+    top: 52px;
+
+    display: flex;
+    width: 70vw;
+    min-height: 500px;
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+
+    overflow-y: scroll;
+}
+
+.popup__img {
+    border-radius: 9px 0 0 9px;
+}
+
+.description__content {
+    padding: 16px 20px 0 30px;
+}
+
+.description__title, .description__subtitle,
+.description__description, .description__traits {
+    color: #000000;
+}
+
+.description__subtitle {
+    margin: -26px 0 0;
+}
+
+.description__header {
+    margin-bottom: 40px;
+}
+
+.description__description {
+    margin-bottom: 40px;
+    line-height: 115%;
+}
+
+.description__traits {
+    padding-inline-start: 14px;
+}
+
+.description__traits li {
+    margin-bottom: -15px;
+}
+
+.description__traits .category {
+    font-weight: bold;
+}
+
+/* ======================================
+    Popup end
+========================================= */
+
+/* ======================================
+    Header
+========================================= */
+
+.header__content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav-items {
+    display: flex;
+    align-items: center;
+    column-gap: 2.4rem;
+    padding-top: 0.3rem;
+}
+
+.header__burger-btn {
+    border: none;
+    background-color: transparent;
+
+    display: none;
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+    left: 0;
+
+    z-index: 4;
+    transition: transform .5s;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-11px);
+}
+
+.header__burger-btn span:nth-child(2) {
+    transform: translateY(10px);
+}
+
+/* ======================================
+    Header end
+========================================= */
+
+
+/* ======================================
+    Footer
+========================================= */
+
+.footer {
+    background: url(../../assets/images/start-screen-gradient-background.png),
+        radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+        #211F20;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: top, top, top;
+}
+
+.footer__content {
+    padding-top: 1.5rem;
+
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 9rem 4.1rem 3.5rem 1fr;
+    grid-template-columns: 20.2rem 21rem 1fr;
+    grid-column-gap: 9rem;
+    grid-row-gap: 1rem;
+}
+
+.footer__content div:not(:last-child) {
+    max-width: 15rem;
+
+}
+
+.col-1 {
+    grid-column: 1;
+}
+
+.col-2 {
+    grid-column: 2;
+}
+
+.footer__header {
+    grid-row: 1;
+}
+
+.row-2 {
+    grid-row: 2;
+}
+
+.row-3 {
+    grid-row: 3;
+}
+
+.footer__content div:last-child {
+    grid-row: 1/-1;
+    grid-column: 3;
+}
+
+.footer__header {
+    color: var(--color-light-xl);
+    text-align: left;
+}
+
+.footer__line {
+    display: flex;
+    column-gap: 1.3rem;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    color: var(--color-primary);
+}
+
+.footer__line h4 {
+    color: inherit;
+}
+
+.footer__img {
+    margin-top: 1.2rem;
+    padding-left: 0.9rem;
+}
+
+/* ======================================
+    Footer end
+========================================= */
+
+
+/* ======================================
+    Responsive layout
+========================================= */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    html {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 25px;
+        line-height: 130%;
+    }
+
+    .wrapper {
+        padding: 0 1rem;
+    }
+
+    .header__content {
+        padding: 1rem 0 !important;
+    }
+
+    .header__logo-subtitle {
+        margin-top: 0.9rem;
+    }
+
+    .header__burger-btn {
+        display: block;
+        position: relative;
+        padding-right: 6.8rem;
+        padding-top: 0.7rem;
+    }
+
+    .header nav {
+        position: absolute;
+        right: -320px;
+        top: 0;
+        padding-top: 12rem;
+        width: 320px;
+        height: 100vh;
+        overflow: hidden;
+
+        transition: transform .5s;
+        z-index: 4;
+    }
+
+    .header__nav-items {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4.1rem;
+        padding: 11.8rem 10px 0;
+    }
+
+    .nav__link {
+        font-size: 32px;
+        line-height: 160%;
+        color: var(--color-light-s);
+    }
+
+    .nav__link.active {
+        padding-bottom: 0.3em;
+    }
+
+
+    .header.open .header__burger-btn span {
+        transform: rotate(90deg);
+    }
+
+    .header.open .header__burger-btn span:nth-child(1) {
+        transform: rotate(90deg) translateY(-11px);
+
+    }
+
+    .header.open .header__burger-btn span:nth-child(2) {
+        transform: rotate(90deg) translateY(10px);
+    }
+
+    .header.open .header__nav {
+        transform: translateX(-100%);
+    }
+
+    .header.open .header__logo {
+        position: absolute;
+        top: 1rem;
+        right: calc(-320px + 26rem);
+        z-index: 5;
+        max-width: 320px;
+        transform: translateX(-100%);
+    }
+
+    .header.open .header__burger-btn {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        z-index: 4;
+    }
+
+    .header.open ~ .popup__overlay {
+        display: block;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+
+    .start-screen__img {
+        width: 260px !important;
+        height: 272px !important;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 9rem 5.3rem 5.8rem 9rem 7rem 6rem 1fr !important;
+        grid-row-gap: 1.5rem !important;
+        justify-content: center;
+        align-items: center;
+
+        padding: 2rem 0 0 !important;
+    }
+
+    .footer__content > * {
+        justify-self: center;
+    }
+
+    .footer__header {
+        text-align: center;
+        max-width: 29rem;
+        margin: 0 auto;
+    }
+
+    .footer__line {
+        column-gap: 1.8rem;
+    }
+
+    .footer__content .col-2 {
+        grid-column: 1;
+        width: 30rem;
+    }
+
+    .footer__header.col-2 {
+        grid-row: 4;
+    }
+
+    .footer__content .row-2.col-2 {
+        grid-row: 5;
+    }
+
+    .footer__content .row-3.col-2 {
+        grid-row: 6;
+    }
+
+    .footer__content div:last-child {
+        padding-top: 0 !important;
+        padding-right: 2rem !important;
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .footer__img {
+        width: 260px;
+        height: 269px;
+        padding-left: 1.9rem;
+    }
+
+    .popup__img {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .wrapper {
+        padding: 0 2rem;
+    }
+
+    .pet-card-img {
+        margin-bottom: 2rem;
+    }
+
+
+    .footer__content {
+        padding: 0;
+        grid-template-columns: 20rem 20rem;
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 0.8rem;
+    }
+
+    .footer__content div:last-of-type {
+        grid-row: auto;
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding-top: 1.6rem;
+        padding-right: 1rem;
+    }
+
+    .footer__header {
+        margin-top: 2rem;
+    }
+
+    .popup__img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .help__need-item.empty {
+        display: none !important;
+    }
+}
+
+/* ======================================
+    Responsive layout end
+========================================= */

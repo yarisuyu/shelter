@@ -1,0 +1,560 @@
+.header {
+    margin-bottom: -12rem;
+    background: transparent;
+}
+
+.header__content {
+    padding: 2.6rem 0;
+}
+
+/* =======================================
+    Start screen
+========================================== */
+
+.start-screen {
+    padding-top: 12rem; /* 192px;*/ /* The size of the header */
+    background: url(../../assets/images/start-screen-gradient-background.png),
+        radial-gradient(00% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+        #211F20;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, top;
+    background-size: cover;
+}
+
+.start-screen .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.3rem; /*42px;*/
+    justify-content: center;
+    align-items: center;
+
+    min-height: 49.1rem;
+}
+
+.start-screen__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 31rem; /* 460px;*/
+    align-items: flex-start;
+
+    padding-bottom: 7rem; /* Padding for better centering */
+}
+
+.start-screen__header {
+    width: 9em;  /* 310px;*/
+    margin-bottom: 0.6em;    /*25px;*/
+    letter-spacing: normal;
+    color: var(--color-light-xl);
+}
+
+.start-screen__subheader {
+    margin-bottom: 2.9em;
+    color: var(--color-dark-s);
+}
+
+.start-screen__img-container {
+    align-self: flex-end;
+}
+
+/* =======================================
+    Start screen end
+========================================== */
+
+/* =======================================
+    About
+========================================== */
+
+.about__content {
+    padding: 4.4rem 0px 5.9rem;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    column-gap: 8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__pic {
+    justify-self: right;
+}
+
+.about__desc {
+    max-width: 28.5rem;
+}
+
+.about__header {
+    max-width: 10em;
+    margin: 0.83em 0 0.65em;
+}
+
+.about__desc p {
+    margin-bottom: 1.7em;
+    color: var(--color-dark-xl);
+}
+
+/* =======================================
+    About end
+========================================== */
+
+/* =======================================
+    Pets
+========================================== */
+
+.pets {
+    padding-top: 5.4rem;
+    padding-bottom: 6.5rem;
+    background: #F6F6F6;
+}
+
+.pets__header {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 12em;
+    margin-bottom: 1.7em;
+}
+
+.pets__scroller {
+    display: grid;
+    grid-template-columns: 3.5rem 994px 3.5rem;
+    grid-template-rows: 29rem;
+    column-gap: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.button-arrow:last-of-type .arrow-ico {
+    transform: rotate(-180deg);
+}
+
+.pets__pet-container {
+    justify-self: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.pets__pet-list {
+    width: 77vw;
+    max-width: 1040px;
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease-in;
+}
+
+.pets__pet-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2.7rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.pet-card {
+    margin: 0;
+}
+
+.pets__link {
+    display: block;
+    width: 11.5rem;
+    margin: 0 auto;
+}
+
+/* =======================================
+    Pets end
+========================================== */
+
+
+/* =======================================
+    Help
+========================================== */
+
+.help {
+    padding-top: 5.4rem;
+    padding-bottom: 6.6rem;
+}
+
+
+.help__header {
+    text-align: center;
+    max-width: 10em;
+    margin: 0 auto;
+    margin-bottom: 1.6em;
+}
+
+.help__needs-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+
+    column-gap: 7.9rem;
+    row-gap: 3.6rem;
+}
+
+.help__need-item {
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help__need-item.empty {
+    display: block;
+}
+
+.help__need-item img {
+    margin-bottom: 2.1rem;
+}
+
+.help__need-item-desc h4 {
+    margin: 0;
+}
+
+/* =======================================
+    Help end
+========================================== */
+
+/* =======================================
+    Donation
+========================================== */
+
+.donation {
+    background: #F6F6F6;
+    padding-top: 4.8rem;
+    padding-bottom: 5.8rem;
+}
+
+.donation__container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 3.2rem;
+    column-gap: 1.8rem;
+    margin: 0 auto;
+}
+
+
+.donation__content {
+    max-width: 24rem;
+    padding-top: 0.6rem;
+    padding-right: 1.2rem;
+}
+
+.donation__header {
+    text-align: left;
+    max-width: 9em;
+    margin: 0;
+    margin-bottom: -0.35rem;
+}
+
+.donation__subheader {
+    margin-bottom: -0.55rem;
+}
+
+.donation__credit-card-link h4 {
+    padding: 0.7rem 1rem;
+    background: var(--color-primary);
+    border-radius: 9px;
+    margin-bottom: 1em;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1rem;
+    white-space: nowrap;
+    max-width: 16em;
+}
+
+.donation__credit-card-link:hover {
+    background-color: var(--color-primary-light);
+    border: 0;
+}
+
+/* =======================================
+    Donation end
+========================================== */
+
+
+/* ======================================
+    Responsive layout
+========================================= */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .header nav {
+        background-color: var(--color-dark-3xl);
+    }
+
+    .start-screen .wrapper {
+        flex-direction: column;
+    }
+
+    .start-screen__content {
+        padding-top: 1.8rem;
+        align-items: center;
+        text-align: center;
+        row-gap: 1.1rem;
+        padding-bottom: 10.4rem;
+    }
+
+    .start-screen__header {
+        font-size: 2.5rem;
+        letter-spacing: 0.06em;
+    }
+
+    .start-screen__subheader {
+        margin-bottom: 2.1em;
+    }
+
+
+
+    .about__content {
+        row-gap: 1.8rem;
+        padding: 3.4rem 0 4.2rem;
+    }
+
+    .about__desc {
+        max-width: 27.6rem;
+        padding: 0 1.5rem;
+    }
+
+    .about__header {
+        margin: 0.8rem auto 2.3rem;
+        text-align: center;
+    }
+
+    .about__desc p {
+        text-align: justify;
+        margin-bottom: 1.5em;
+    }
+
+    .about__pic-img {
+        width: 260px !important;
+        height: 354px !important;
+    }
+
+
+
+    .pets {
+        padding-top: 4.2rem;
+        padding-bottom: 4.1rem;
+    }
+
+    .pets .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4.1rem;
+    }
+
+    .pets__header {
+        margin-bottom: 0;
+    }
+
+    .pets__scroller {
+        grid-template-columns: 1fr;
+        grid-template-rows: 44rem 5.2rem;
+        row-gap: 1.6rem;
+        margin-bottom: 0rem;
+    }
+
+    .pets__pet-container {
+        grid-row: 1;
+        grid-column: 1/-1;
+    }
+
+    .pets__scroller .button-arrow:first-of-type {
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: calc(50% - 9.2rem);
+    }
+
+    .pets__scroller .button-arrow:last-of-type {
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: calc(50% + 4rem);
+    }
+
+    .pets__pet-list {
+        margin-bottom: 0.5rem;
+        max-width: 27rem;
+        width: 100vw;
+    }
+
+    .pet-card-img {
+        margin-bottom: 3rem;
+    }
+
+    .pet-card-name {
+        margin-bottom: 4.4rem;
+    }
+
+    .pets__link {
+        width: 17.3rem;
+    }
+
+
+    .help {
+        padding-top: 4.4rem;
+        padding-bottom: 4rem;
+    }
+
+    .help__header {
+        margin-bottom: 1.4em;
+    }
+
+    .help__needs-list {
+        column-gap: 1.6rem;
+        row-gap: 2.4rem;
+    }
+
+    .help__need-item {
+        width: 142px;
+    }
+
+    .help__need-item-img {
+        width: 50px;
+        margin-bottom: 1.6rem !important;
+    }
+
+    .help__need-item-desc h4 {
+        font-size: 15px;
+    }
+
+
+    .donation {
+        padding: 3.6rem 0 4.2rem;
+
+    }
+
+    .donation__container {
+        row-gap: 3rem;
+    }
+
+    .donation__content {
+        max-width: 28rem;
+        padding-right: 0;
+    }
+
+    .donation__header {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .donation__subheader {
+        font-size: 13px;
+        line-height: 140%;
+        margin-bottom: 2.2rem;
+        text-align: center;
+    }
+
+    .donation__credit-card-link h4 {
+        font-size: 15px;
+        line-height: 110%;
+        max-width: 17em;
+        padding: 10px 15px;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        column-gap: 1.3rem;
+    }
+
+    .donation__container p.small {
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .donation__pic-img {
+        width: 260px;
+        height: 135.2px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px){
+    .header__content {
+        padding: 0.6rem 0;
+    }
+
+    .start-screen .wrapper {
+        justify-content: flex-end;
+    }
+
+    .start-screen__content {
+        margin: 0 auto;
+        padding-top: 0.2rem;
+        padding-bottom: 6.5rem;
+    }
+
+    .start-screen__link {
+        margin: 0 auto;
+    }
+
+    .start-screen__img {
+        width: 569px;
+        height: 593px;
+    }
+
+
+    .about__content {
+        padding: 3.5rem 0 6.7rem;
+        row-gap: 3.6rem;
+    }
+
+
+
+    .pets {
+        padding-bottom: 6.7rem;
+    }
+
+    .pets__header {
+        margin-bottom: 1.65em;
+    }
+
+    .pets__scroller {
+        grid-template-columns: 3.5rem 1fr 3.5rem;
+        column-gap: 1rem;
+    }
+
+    .pets__pet-list {
+        overflow: hidden;
+        column-gap: 2.8rem;
+        max-width: 38.8rem;
+    }
+
+
+    .help {
+        padding-bottom: 3.2rem;
+    }
+
+    .help__header {
+        margin-bottom: 1.65em;
+    }
+
+    .help__need-item {
+        width: 110px;
+    }
+
+    .help__need-item img {
+        margin-bottom: 2rem;
+    }
+
+    .help__need-item.empty {
+        display: block;
+    }
+
+
+    .donation__container {
+        padding-bottom: 0.8rem;
+    }
+}
+
+/* ======================================
+    Responsive layout end
+========================================= */
